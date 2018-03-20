@@ -1,0 +1,22 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <servlet>
+        <servlet-name>listFilms</servlet-name>
+        <servlet-class>main.java.ListFilms</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewFilms</servlet-name>
+        <servlet-class>main.java.ViewFilms</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>listFilms</servlet-name>
+        <url-pattern>/films</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewFilms</servlet-name>
+        <url-pattern>/view</url-pattern>
+    </servlet-mapping>
+</web-app>
