@@ -3,6 +3,7 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
+    
     <servlet>
         <servlet-name>listFilms</servlet-name>
         <servlet-class>main.java.ListFilms</servlet-class>
@@ -19,4 +20,8 @@
         <servlet-name>ViewFilms</servlet-name>
         <url-pattern>/view</url-pattern>
     </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>HelloUser.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>
+
