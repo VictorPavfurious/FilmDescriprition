@@ -3,19 +3,30 @@ package main.java;
 public class Films {
     private String title;
     private String overview;
-
-    public Films(String title, String overview) {
-        this.title = title;
-
-        this.overview = overview;
-    }
+    private int id;
 
 
     public Films(String title) {
         this.title = title;
+        this.overview = title;
+    }
+
+    public Films(int id) {
+        //this.title = title;
+        this.id = id;
+
     }
 
 
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
