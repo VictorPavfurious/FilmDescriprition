@@ -1,17 +1,20 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
 
-<web-app>
-    
+
+    <welcome-file-list>
+        <welcome-file>HelloUser.jsp</welcome-file>
+    </welcome-file-list>
+
     <servlet>
         <servlet-name>listFilms</servlet-name>
         <servlet-class>main.java.ListFilms</servlet-class>
+
     </servlet>
     <servlet>
         <servlet-name>ViewFilms</servlet-name>
         <servlet-class>main.java.ViewFilms</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>listFilms</servlet-name>
         <url-pattern>/films</url-pattern>
@@ -20,8 +23,6 @@
         <servlet-name>ViewFilms</servlet-name>
         <url-pattern>/view</url-pattern>
     </servlet-mapping>
-    <welcome-file-list>
-        <welcome-file>HelloUser.jsp</welcome-file>
-    </welcome-file-list>
+
 </web-app>
 
