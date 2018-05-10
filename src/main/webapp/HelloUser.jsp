@@ -6,8 +6,12 @@
 </head>
 <body>
 
+<form action="films" >
+    <p> Name: <input type="text" name="name"></p>
+    <p> Password: <input type="password" name="password"></p>
+    <p> <input type="submit" value="send"></p>
 
-    <a href="films">If you wanna see films, please press this</a>
+</form>
 
 </body>
 </html>
