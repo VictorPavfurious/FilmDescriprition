@@ -30,43 +30,25 @@ public class ViewFilms extends HttpServlet {
         ArrayList<Films> films = new ArrayList<Films>();
         JSONArray array = obj.getJSONArray("results");
         for (int i = 0; i < array.length(); i++) {
-            films.add(new Films(array.getJSONObject(i).getString("overview")));
-            //getOver(array.getJSONObject(i).getString("overview"));
+            films.add(new Films(array.getJSONObject(i).getString("title"), array.getJSONObject(i).getString("overview"),
+                    array.getJSONObject(i).getInt("id")));
 
         }
-
-
 
         for (int i = 0; i < films.size(); i++) {
-            request.setAttribute("over" + i, films.get(i).getOverview());
+            if (request.getParameter("title").equals(films.get(i).getTitle())) {
 
+                request.setAttribute("over", films.get(i).getOverview());
+
+
+            }
         }
 
-        /*for (int i = 0; i < array.length(); i++) {
-            if(array.getJSONObject(i).has(films.get(i).getTitle())) {
-                request.setAttribute("overview" , films.get(i).getTitle());
-                out.print(films.get(i).getTitle());
-            }
-        }*/
-
-       /* Iterator<Films> itr = films.iterator();
-
-            while (itr.hasNext()) {
-                if (itr.next().getTitle().equals(itr.next().getOverview())) {
-                    request.setAttribute("overview", itr.next().getOverview());
-                }
-            }*/
 
         request.getRequestDispatcher("descriptionF.jsp").forward(request, response);
 
     }
 
-    /*public String getOver(String over) {
-        Films films = new Films();
-        films.setOverview(over);
-
-        return over;
-    }*/
 
 }
 

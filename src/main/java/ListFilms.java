@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ListFilms extends HttpServlet {
 
@@ -27,27 +28,18 @@ public class ListFilms extends HttpServlet {
 
 
         ArrayList<Films> films = new ArrayList<Films>();
-        ArrayList<Films> id = new ArrayList<Films>();
-        ArrayList<Films> overview = new ArrayList<Films>();
         JSONArray array = obj.getJSONArray("results");
 
 
         for (int i = 0; i < array.length(); i++) {
-            films.add(new Films(array.getJSONObject(i).getString("title")));
-           id.add(new Films(array.getJSONObject(i).getInt("id")));
-            overview.add(new Films(array.getJSONObject(i).getString("overview")));
+            films.add(new Films(array.getJSONObject(i).getString("title"), array.getJSONObject(i).getString("overview"),
+                    array.getJSONObject(i).getInt("id")));
         }
 
         for (int i = 0; i < films.size(); i++) {
             request.setAttribute("title" + i, films.get(i).getTitle());
-           request.setAttribute("id" + i, id.get(i).getId());
-            request.setAttribute("overview" + i, overview.get(i).getOverview());
-
 
         }
-
-
-        //String c = getServletConfig().getInitParameter("id");
 
        request.getRequestDispatcher("index.jsp").forward(request, response);
 

@@ -6,19 +6,11 @@ public class Films {
     private int id;
 
 
-    public Films(String title) {
+    public Films(String title, String over , int id) {
         this.title = title;
-        this.overview = title;
-    }
-
-    public Films(int id) {
-        //this.title = title;
+        this.overview = over;
         this.id = id;
-
     }
-
-
-
 
     public int getId() {
         return id;
