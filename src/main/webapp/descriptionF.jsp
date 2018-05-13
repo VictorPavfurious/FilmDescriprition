@@ -5,13 +5,12 @@
     <title>Description</title>
 </head>
 <body>
-<form action="index.jsp">
 
-    <p> <% out.print(request.getParameter("view"));%> </p>
+
+    <p> <% out.print(request.getAttribute("over"));%> </p>
     <a href="films">Back</a>
 
 
-</form>
 
 </body>
 </html>
