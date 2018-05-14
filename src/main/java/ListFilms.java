@@ -36,10 +36,14 @@ public class ListFilms extends HttpServlet {
                     array.getJSONObject(i).getInt("id")));
         }
 
-        for (int i = 0; i < films.size(); i++) {
-            request.setAttribute("title" + i, films.get(i).getTitle());
+        String[] list = new String[films.size()];
+
+        for (int i = 0; i < list.length; i++) {
+            list[i] = films.get(i).getTitle();
 
         }
+
+        request.setAttribute("filmlist", list);
 
        request.getRequestDispatcher("index.jsp").forward(request, response);
 
