@@ -1,5 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 
 
 <html>
@@ -10,14 +12,16 @@
 <h2> Hello ${param.name} </h2>
 
 
-    <%
-        for (int i = 0; i < 20; i++) {%>
-    <p> <a href="view?title=<%= request.getAttribute("title" + i)%>"> <% out.println(request.getAttribute("title" + i)); %></a> </p>
+<c:forEach var ="film" items ="${filmlist}">
 
-    <%}%>
+    <p><a href="view?title=${film}"> ${film} </a></p>
+</c:forEach>
+
 
 
 <a href="HelloUser.jsp">Back for new login</a>
+
+
 
 
 </body>
