@@ -3,17 +3,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Description</title>
+    <title>Title</title>
 </head>
 <body>
+<h1> ${param.idFilm} </h1>
 
-
-    <p> <c:out value="${description}" /> </p>
-    <a href="films">Back</a>
-
-
-
-
+<p><%=request.getAttribute("filmGet")%> </p>
 
 </body>
 </html>
