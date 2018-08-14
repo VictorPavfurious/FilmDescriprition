@@ -14,6 +14,15 @@
         <servlet-name>ViewFilms</servlet-name>
         <servlet-class>main.java.ViewFilms</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ButtonAction</servlet-name>
+        <servlet-class>main.java.ButtonAction</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ButtonAction</servlet-name>
+        <url-pattern>/actions</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>listFilms</servlet-name>
