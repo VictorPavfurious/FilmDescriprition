@@ -1,14 +1,25 @@
 package main.java;
 
+
 public class Films {
+
+
     private String title;
     private String overview;
     private int id;
 
 
-    public Films(String title, String over , int id) {
+    public Films () {
+
+    }
+
+    public Films(int id, String title, String overview) {
+        this.id = id;
         this.title = title;
-        this.overview = over;
+        this.overview = overview;
+    }
+
+    public Films(int id) {
         this.id = id;
     }
 
@@ -35,4 +46,11 @@ public class Films {
     public void setOverview(String overview) {
         this.overview = overview;
     }
+
+    @Override
+    public String toString() {
+        return  id + " " + title + " " + overview;
+    }
+
+
 }
